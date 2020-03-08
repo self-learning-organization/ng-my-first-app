@@ -1,1 +1,10 @@
-<p>The Server Component</p>
+<p>{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}</p> 
+<!-- The only condition for string interpolation syntax here is that 
+    whatever you have between the curly braces, in the end it somehow 
+    has to return a string. That's why we can hardcode a string in there.
+    We could also call a method here which returns a string in the end. 
+    However, with the other restriction, we can't write multi-line expressions 
+    here, i.e. we can't write block expressions here, so no adding of if or 
+    for control structure, though we can use a ternary expression. The number 10 
+    is this example is fine though because it can be easily converted into a string. 
+    So yep, as long as it can be converted to a string, it'd be fine too. -->
