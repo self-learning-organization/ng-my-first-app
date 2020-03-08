@@ -1,5 +1,16 @@
-<button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button> <!-- Binding the native element property "disabled" to my own TypeScript property 
-                                                                                    here. Added an exclamation mark to make sure that the button is only disabled if
-                                                                                    the value of allowNewServer is not true. -->
+<button 
+class="btn btn-primary" 
+[disabled]="!allowNewServer"
+(click)="onCreateServer()">Add Server</button> 
+    <!-- Binding the native element property "disabled" to my own TypeScript property 
+    here. Added an exclamation mark to make sure that the button is only disabled if
+    the value of allowNewServer is not true. -->
+    <!-- Instead of using the onClick attribute on HTML, we use the syntax Angular offers e.g. () with event name in between
+    us. Although we can do inline code in the template if all I want to do is to set some boolean property to true for example
+    or do a serverCreationStatus = 'Server was created!', we still shouldn't put too much logic into our templates as a rule
+    of thumb. -->
+<!-- <p>{{ allowNewServer }}</p> -->
+<!-- <p [innerText]="allowNewServer"></p> -->
+<p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
 <app-server></app-server>
