@@ -13,7 +13,7 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
   allowNewServer = false;
   serverCreationStatus = 'No server was created!';
-  serverName = '';
+  serverName = 'Test Server';
 
   constructor() { 
     setTimeout(() => {
@@ -28,7 +28,7 @@ export class ServersComponent implements OnInit {
     this.serverCreationStatus = 'Server was created!';
   }
 
-  onUpdateServerName(event: Event) {
+  onUpdateServerName(event: Event) { // By using two-way binding, I'm not calling this method anymore
     // console.log(event);
     this.serverName = (<HTMLInputElement>event.target).value; // Explicityly inform TypeScript that we know that the type of the HTML element of this event will be an HTML input element.
   }

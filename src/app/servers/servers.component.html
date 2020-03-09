@@ -1,8 +1,18 @@
 <label>Server Name</label>
+<!-- <input 
+    type="text" 
+    class="form-control"
+    (input)="onUpdateServerName($event)">  -->
+    <!-- $event is a reserved word which gives us access to event data. -->
 <input 
     type="text" 
     class="form-control"
-    (input)="onUpdateServerName($event)"> <!-- $event is a reserved word which gives us access to event data. -->
+    [(ngModel)]="serverName"> 
+    <!-- This set up is a two-way binding (unlike the one above) will do the following, it will trigger on the input event and 
+        update the value of server name in our component automatically. On the other hand, 
+        since it is two-way binding, it will also update the value of the input element if 
+        we change server name somewhere else and I've demonstrated this by going back to the TypeScript code
+        and setting server name to Test Server here initially. -->
 <p>{{ serverName }}</p>
 <button 
 class="btn btn-primary" 
