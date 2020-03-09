@@ -1,4 +1,7 @@
-<p [ngStyle]="{backgroundColor: getColor()}">{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}</p> 
+<p 
+    [ngStyle]="{backgroundColor: getColor()}"
+    [ngClass]="{online: serverStatus === 'online'}">
+    {{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}</p> 
 <!-- The only condition for string interpolation syntax here is that 
     whatever you have between the curly braces, in the end it somehow 
     has to return a string. That's why we can hardcode a string in there.
